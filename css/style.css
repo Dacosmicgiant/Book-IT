@@ -13,7 +13,7 @@
 /* Some variables */
 
 :root {
-    --main-color: #ffb43a;
+    --main-color: #e8940d;
     --hover-color: hsl(37,94%,57%);
     --body-color: #1e1e2a;
     --container-color: #2d2e37;
@@ -213,9 +213,9 @@ header{
     justify-content: center;
 }
 
-.watch-btn .bx:hover{
+/* .watch-btn .bx:hover{
     background: var(--hover-color);
-}
+} */
 
 .watch-btn span {
     font-size: 1rem;
@@ -344,4 +344,141 @@ header{
 .copyright{
     text-align: center;
     padding: 20px;
+}
+
+/* Custom Scroll Bar */
+html::-webkit-scrollbar{
+    width: 0.5rem;
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+}
+
+
+
+/* *************************************************************************** */
+
+/* Add these styles to your existing CSS file */
+
+.book-btn {
+    display: flex;
+    align-items: center;
+    column-gap: 0.8rem;
+    color: var(--text-color);
+    background-color: var(--main-color);
+    padding: 0.7rem 1.4rem;
+    border-radius: 0.5rem;
+    transition: 0.3s all linear;
+}
+
+.book-btn:hover {
+    background-color: var(--hover-color);
+} 
+
+.book-btn .bx {
+    font-size: 21px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: var(--container-color);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 0.5rem;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--main-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Seat selection styles */
+#seat-selection {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    background-color: #444451;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.seat.selected {
+    background-color: var(--main-color);
+}
+
+.seat.occupied {
+    background-color: #fff;
+}
+
+#confirm-booking {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s all linear;
+}
+
+#confirm-booking:hover {
+    background-color: var(--hover-color);
+}
+
+/* Bookings section styles */
+#bookings-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.booking-item {
+    background-color: var(--container-color);
+    padding: 15px;
+    border-radius: 0.5rem;
+}
+
+.booking-item h3 {
+    margin-top: 0;
+    color: var(--main-color);
+}
+
+.booking-item p {
+    margin: 5px 0;
 }
